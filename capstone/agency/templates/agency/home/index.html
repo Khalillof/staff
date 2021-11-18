@@ -1,0 +1,383 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block homepanner %}
+
+ {% include "shared/_Presenter.html" %} 
+
+{% endblock %}
+
+{% block body %}
+<h5 class="text-center">{{title}}</h5>
+<!-- engage-->
+<div class="container-fluid page-section portfolio " id="engage">
+    <div class="row ">
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>150</h3>
+
+                    <p>New Jobss</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-business-time"></i>
+                </div>
+                <a  class="small-box-footer js-scroll-trigger" href="{% url 'agency:adverts' 1 %}" >
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>Responce  99<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>Any Queries</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-question-circle"></i>
+                </div>
+                <a href="{% url 'mail:contact-add' %}" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>44</h3>
+
+                    <p>Join Us</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <a href="{% url 'agency:adverts' 1 %}" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>65</h3>
+
+                    <p>Businesses hub</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-business-time"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+</div>
+
+<!-- Services -->
+<div class="container-fluid page-section portfolio border-top " id="portfolio">
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+
+            <img class="img-fix" src="{% static 'images/310_170/driver.png' %}" loading="lazy" alt="">
+            <p class="small "> Professional staff For All Your Need</p>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="one">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" src="{% static 'images/310_170/van9.png' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>School Bus</h4>
+                    <p class="text-muted">Priority</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="two" >
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" src="{% static 'images/310_170/couch_1.jpg' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Bus Couches</h4>
+                    <p class="text-muted">Private And public</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="three" >
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" src="{% static 'images/310_170/truck_2.jpg' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Trucks</h4>
+                    <p class="text-muted">HGV-1 HGV-2</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="four">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" src="{% static 'images/310_170/truck_1.jpg' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Van Truck</h4>
+                    <p class="text-muted">Variety</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="five">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" width="170" height="170"src="{% static 'images/nurse.jpg' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Nurses</h4>
+                    <p class="text-muted">Private Nurse</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 d-none d-md-block d-lg-block">
+            <div class="portfolio-item">
+                <a class="portfolio-link" title="contact us" href="{% url 'mail:contact-add'%}">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas black fa-link fa-3x"></i>
+                        </div>
+                    </div><br />
+                    <img class="img-fix" width="170" height="170" src="{% static 'images/staff.jpg' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Have Queries</h4>
+                    <p class="text-muted">drop us a line!  </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 ">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" data-target="#BaseModel" href="#BaseModel" data-whatever="six">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fas fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fix" width="170" height="170" src="{% static 'images/avatar.png' %}" loading="lazy" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Professionals</h4>
+                    <p class="text-muted">multi expertise </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Team -->
+<div class="container-fluid page-section border-top" id="teams">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="display-4">Our Amazing Team</h2>
+            <h3 class=" text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="team-member">
+                <img class="mx-auto rounded-circle" src="{% static 'images/team/1.jpg' %}"  loading="lazy" alt="">
+                <h4>Kay Garland</h4>
+                <p class="text-muted">Lead Designer</p>
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="team-member">
+                <img class="mx-auto rounded-circle" src="{% static 'images/team/2.jpg' %}" loading="lazy" alt="">
+                <h4>Larry Parker</h4>
+                <p class="text-muted">Lead Marketer</p>
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="team-member">
+                <img class="mx-auto rounded-circle" src="{% static 'images/team/3.jpg' %}" loading="lazy" alt="">
+                <h4>Diana Pertersen</h4>
+                <p class="text-muted">Lead Developer</p>
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- About -->
+<div class="container-fluid page-section border-top" id="about">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="display-3 text-uppercase">About</h2>
+            <h3 class=" text-muted">All about Passion.</h3>
+            <div class=" p-2  mb-3"> <p class="lead">Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'images/about/1.jpg' %}" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>January 20017</h4>
+                            <h4 class="subheading">Started the Journey</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="lead">Translating thoughts, feelings, and ideas into business model. No matter how big a business, behind it there is a story that starts with a person.!</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'images/about/2.jpg' %}" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>October 2017</h4>
+                            <h4 class="subheading">The Agency is Born</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="lead">The company was Incorporated as private limited compay with limited resouces, but with big ambitions backed with competent professionals for professionals. We just got started  !</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'images/about/3.jpg' %}" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>20019</h4>
+                            <h4 class="subheading">Transition to Service</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="lead">Business transition to service can be complex. scalling out in phases mode is a key elements in in successful transition strategy</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="{% static 'images/about/4.jpg' %}" alt="">
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>March 2020</h4>
+                            <h4 class="subheading">Phase Two Expansion</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="lead">this is our next phase in our Scalling out Business plan.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            Be Part
+                            <br>Of Our
+                            <br>Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

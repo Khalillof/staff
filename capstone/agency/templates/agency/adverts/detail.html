@@ -1,0 +1,72 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+
+        <div class="row">
+           {% if object %}
+
+                    <div class="col-sm-8 col-md-6 col-lg-6 mx-auto ">
+                        <div class="card card-maroon card-outline">
+                            <div class="card-body box-profile">
+                
+                                <div class="ribbon-wrapper ribbon-xl">
+                                    <div class="ribbon bg-maroon ">
+                                        {{object.job.title}}
+                                    </div>
+                                </div>
+                                <div class="card-img-top">
+                                    <img class=" img-fluid imgCentre img-circle" src="{% static object.imgUrl|default:object.image %}" alt="User profile picture">
+                                </div>
+                
+                                <h3 class="profile-username text-center">Job Title</h3>
+                
+                                <h3 class="lead"><b>{{object.job.title}}</h3>
+ 
+                                <strong><i class="fas fa-book mr-1"></i>Requirments: </strong>
+                
+                                <p class="lead">
+                                    {{object.Core_requirements}}
+                                </p>                                              
+                
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                
+                                <ul class="ml-4 mb-0 fa-ul ">
+                                    <li class="small"><span class="fa-li"><i class="fas fa-sm fa-building"></i></span> Address:{{object.job.location.first_line}} , {{object.job.location.city}}, {{object.job.location.country}}</li>
+                                    <li class="small"><span class="fa-li"><i class="fas fa-sm fa-phone"></i></span> Phone #: + 44 - {{object.job.office.telephone}}</li>
+                                </ul>
+                
+                                <ul class="list-group list-group-unbordered mb-3">
+                                    <li class="list-group-item">
+                                        <b> Contract Type </b> <a class="float-right">{{ object.contract_type}} </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Salary</b> <a class="float-right">${{object.job.salary}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Per Hour</b> <a class="float-right">$ {{object.job.per_hour}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Publish Date</b> <a class="float-right">{{object.open_date}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Positions avaliable </b> <a class="float-right">{{object.positions}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Close Date </b> <a class="float-right"> {{object.close_date}} </a>
+                                    </li>
+                                </ul>
+                                <a class="btn btn-primary " href="{% url 'agency:adverts' 1 %}"> Back to List <i class="fas fa-list-alt"></i> </a>
+                                <a class="btn btn-primary float-right" href="{% url 'agency:application-add' advert_id=object.id %}"> Apply <i class="fas fa-upload"></i></a>
+                
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+
+               {% else %}
+               <h5> Not Found</h5>
+            {% endif %}
+        </div>
+{% endblock %}

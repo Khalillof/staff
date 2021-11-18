@@ -1,0 +1,45 @@
+
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+     <div class="card card-primary card-outline">
+          <!-- /.card-header -->
+          <div class="card-body ">
+            <div class="mailbox-read-info">
+              <h5>{{object.subject}}</h5>
+              <h6>From: {{object.name}}
+                <span class="mailbox-read-time float-right">{{ object.created|date:"D d M y  H:i" }}</span></h6>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <div class="mailbox-controls with-border text-center">
+              <div class="btn-group">
+                <a href="{% url 'mail:contact-delete' object.id %}" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                  <i class="far fa-trash-alt"></i></a>
+              </div>
+              <!-- /.btn-group -->
+              <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                <i class="fas fa-print"></i></button>
+            </div>
+            <!-- /.mailbox-controls -->
+            <div data-read="{{object.body}}" class="mailbox-read-message">
+
+              <p>
+
+                   {{ object.body }}
+
+              </p>
+
+            </div>
+            <!-- /.mailbox-read-message -->
+          </div>
+
+          <!-- /.card-footer -->
+          <div class="card-footer">
+            <a href="{% url 'mail:contact-delete' object.id %}" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
+            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+          </div>
+     </div>
+
+{% endblock %}

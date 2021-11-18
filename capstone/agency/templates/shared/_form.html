@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-8 col-lg-8 col-sm-12 mx-auto">
+        <div class="card card-primary card-outline">
+            <div class="ribbon-wrapper ribbon-xl">
+                <div class="ribbon bg-primary ">
+                    <a class="card-link" href=""><b>{{title}} </b> Form</a>
+                </div>
+            </div>
+            <small class="text-center text-danger">{{form.errors }}</small>
+            <div class="stepper card-body ">
+                <form class="needs-validation " method="post" id="drvForm" role="form" enctype="multipart/form-data"
+                    novalidate action="">
+
+
+
+                    <div class="taber">
+                        <div class="row">
+                            <dl class="col-md-auto mx-auto">
+                                <dt class="text-center "> {{title}} </dt>
+                            </dl>
+                        </div>
+                         
+                        {% for field in form.hidden_fields %}
+                        {{ field }}
+
+                        {% endfor %}
+
+                        {% for field in form.visible_fields %}
+                       
+                        <dl class="form-group row">
+                            <dt>                               
+                                <label id="{{ field.id_for_label }}" for="{{ field.html_name }}" class="col-sm-auto col-form-label"> {{ field.label_tag }} </label>
+                            </dt>
+                            <dd class="col">
+                                {{ field }}
+                            </dd>
+                        </dl>
+                        {% endfor %}
+                       
+                       {% csrf_token %}
+                    </div>
+
+                    <div class="taber" id="fnsh">
+                        <dl>
+                            <dt class="text-center ">
+                                Terms And Conditions
+                            </dt>
+                        </dl>
+                        <div class="form-row" id="finish">
+                            <div class="col-md-6 mx-auto">
+                                <div class="form-group row">
+                                    <div class="offset-sm-2 col">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="terms" required>
+                                            <label class="custom-control-label" for="terms">I agree to the <a
+                                                    href="#">terms and conditions</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-row" id="Nbrx">
+                        <div class="col">
+                            <button class="btn btn-primary prevBtn  btn-block" type="button"> <i
+                                    class="fa fa-arrow-circle-left "></i> Previous </button>
+                        </div>
+                        <div class="col d-none d-md-block d-xl-block "></div>
+                        <div class="col">
+                            <button class="btn btn-primary nextBtn btn-block " type="button"> Next <i
+                                    class="fa fa-arrow-circle-right"></i> </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

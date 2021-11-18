@@ -1,0 +1,18 @@
+{% extends "shared/layout.html" %}
+
+{% block homepanner %}
+<div class=" w-100 text-center">
+    <i class="fas blue fa-envelope-open-text fa-4x"></i>
+    <h6 class="display-4 ">
+        Please drop us a line!
+    </h6>
+    <a class="card-link " href=""><b>{{title}} </b> Form</a>
+</div>
+{% endblock %}
+
+{% block body %}
+
+
+{% include "shared/_form.html" with title=title form=form %}
+
+{% endblock %}

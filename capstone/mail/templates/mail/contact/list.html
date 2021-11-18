@@ -1,0 +1,55 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="card-header">
+    <h3 class="card-title">{{title}}</h3>
+
+    <div class="card-tools">
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control" placeholder="Search contacts">
+            <div class="input-group-append">
+                <div class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-tools -->
+</div>
+<!-- /.card-header -->
+<div class="card-body p-0">
+    <div class="mailbox-controls">
+        {% include "shared/_pagination.html" with float='float-left'  page=page %}
+  
+    </div>
+    <div class="table-responsive mailbox-messages">
+        <table class="table table-hover table-striped">
+            <tbody>
+                {% for item in object_list %}
+                <tr>
+                    <td class="mailbox-name"><a  href="{% url 'mail:contact-detail' item.id %} ">{{item.name}}</a></td>
+                    <td class="mailbox-subject"><b>{{item.subject}}</b> 
+                    </td>
+                    <td class="mailbox-attachment"></td>
+                    <td class="mailbox-date"> {{ item.created|date:"D d M y  H:i" }} </td>
+                </tr>
+                {% endfor%}
+
+            </tbody>
+        </table>
+        <!-- /.table -->
+    </div>
+    <!-- /.mail-box-messages -->
+</div>
+<!-- /.card-body -->
+<div class="card-footer p-0">
+    <div class="mailbox-controls">
+        {% include "shared/_pagination.html" with page=page %}
+        <!-- /.float-right -->
+    </div>
+</div>
+
+{% endblock %}
+

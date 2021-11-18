@@ -1,0 +1,153 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block body %}
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="{% url 'mail:email-add' %}" class="btn btn-primary btn-block mb-3">Compose</a>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Folders</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item active">
+                            <a href="{% url 'mail:mailbox-list' mailbox='inbox' page=1 %}" class="nav-link">
+                                <i class="fas fa-inbox"></i> Inbox
+                                <span class="badge bg-primary float-right">12</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'mail:mailbox-list' mailbox='sent' page=1 %}" class="nav-link">
+                                <i class="far fa-envelope"></i> Sent
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'mail:mailbox-list' mailbox='draft' page=1 %}" class="nav-link">
+                                <i class="far fa-file-alt"></i> Drafts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-filter"></i> Junk
+                                <span class="badge bg-warning float-right">65</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'mail:mailbox-list' mailbox='trash' page=1 %}" class="nav-link">
+                                <i class="far fa-trash-alt"></i> Trash
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Labels</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle text-danger"></i>
+                                Important
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle text-warning"></i> Promotions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle text-primary"></i>
+                                Social
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="card card-primary card-outline">
+                {% block mailbox %}
+ 
+                {% endblock %}
+
+              
+
+                
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+
+<script>
+    (($) => { 
+        //Enable check and uncheck all functionality
+        $('.checkbox-toggle').click(function () {
+            var clicks = $(this).data('clicks')
+            if (clicks) {
+                //Uncheck all checkboxes
+                $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+            } else {
+                //Check all checkboxes
+                $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+            }
+            $(this).data('clicks', !clicks)
+        })
+
+        //Handle starring for glyphicon and font awesome
+        $('.mailbox-star').click(function (e) {
+            e.preventDefault()
+            //detect type
+            var $this = $(this).find('a > i')
+            var glyph = $this.hasClass('glyphicon')
+            var fa = $this.hasClass('fa')
+
+            //Switch states
+            if (glyph) {
+                $this.toggleClass('glyphicon-star')
+                $this.toggleClass('glyphicon-star-empty')
+            }
+
+            if (fa) {
+                $this.toggleClass('fa-star')
+                $this.toggleClass('fa-star-o')
+            }
+        })
+    })(jQuery);
+</script>
+
+{% endblock scripts %}
+
+

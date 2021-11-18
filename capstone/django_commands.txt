@@ -1,0 +1,94 @@
+
+python -m django
+
+Type 'python -m django help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+for example ## python -m django startproject FirstPyPro
+#######################################################################################
+
+#Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver
+
+#run app
+ python manage.py runserver
+
+#makeMigration
+python manage.py makemigrations projectName
+#migration
+python manage.py migrate
+
+# play with shell
+python manage.py shell
+
+#Creating an admin user
+python manage.py createsuperuser
+
+#
+export DJANGO_SETTINGS_MODULE=mysites.settings

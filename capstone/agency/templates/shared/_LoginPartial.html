@@ -1,0 +1,20 @@
+﻿
+
+    {% if user.is_authenticated %}
+    
+        <li class="nav-item">
+            <a class="nav-link "  href="/" title="Manage"><i class="fa fa-user-secret"> Manage</i></a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-sm btn-outline-primary" id="logout" href="{% url 'accounts:logout' %}"><i class="fa fa-sign-out-alt "></i> Log Out</a>
+
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link " href="{% url accounts:register %}"> Join</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'accounts:login' %}"> Login</a>
+        </li>
+        {% endif %}
+

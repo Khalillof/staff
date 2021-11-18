@@ -1,0 +1,24 @@
+{% extends "mail/mailbox.html" %}
+{% load static %}
+
+{% block mailbox %}
+
+
+<div class="card-body text-center ">
+
+<form method="post">{% csrf_token %}
+    <h5 class="helper-text text-center">Are you sure you want to delete this email ?</h5> 
+    <div class="mailbox-read-info">
+        <h5>{{object.subject}}</h5>
+        <h6>From: {{object.sender.full_name}}
+          <span class="mailbox-read-time float-right">Created :  {{ object.created|date:"D d M y  H:i" }}</span></h6>
+      </div>
+<div class="form-group">
+    <input class="btn btn-primary" type="submit" value="Confirm">
+</div>
+
+
+
+</form>
+</div>
+{% endblock %}

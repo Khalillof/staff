@@ -1,0 +1,127 @@
+{% extends "shared/layout.html" %}
+
+{% block title %}
+
+    Register for new account
+                   
+{% endblock %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-8 mx-auto ">
+
+
+
+            <div class="register-box m-auto">
+                <div class="card">
+                    <div class="card-body register-card-body">
+                        <p class="register-box-msg">Sign in </p>
+
+                        {% if message %}
+                         <div class="form-row text-danger text-center">{{ message }}</div>
+                        {% endif %}
+                        <form class="needs-validation" action="{% url 'accounts:user-add' %}" method="post" id="registerform" novalidate>
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" autocomplete="on" autofocus name="username" placeholder="Username" minlength="3" maxlength="10">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" autocomplete="on" autofocus name="email" placeholder="Email Address" required minlength="5" maxlength="30">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" maxlength="10" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" autofocus name="confirmation" placeholder="Confirm Password" minlength="6" maxlength="10" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="form-row ">
+                                    <div class="col-md-12 ">
+                                        <div class=" form-group m-auto p-2">
+                                            <div class="g-recaptcha m-auto" id="checkedup"
+                                                 data-sitekey="6LfVND8UAAAAANu5cLO36YkUin674YIDd48e6Xx7">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-8 ">
+                                        <div class="icheck-primary">
+                                            <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
+                                            <label for="agreeTerms">
+                                                I agree to the <a href="/">terms</a>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4 mx-auto">
+                                        <button type="submit" class="btn btn-block btn-primary"> Register</button>
+                                    </div>
+                                </div>
+
+                           
+                        </form>
+
+                        <div class="social-auth-links text-center mb-3">
+                            <p>- OR -</p>
+                            <a href="#" class="btn btn-block btn-primary">
+                                <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                            </a>
+                            <a href="#" class="btn btn-block btn-danger">
+                                <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                            </a>
+                        </div>
+                        <!-- /.social-auth-links -->
+
+                        <p class="mb-1">
+                            <a id="forgot-password" asp-page="#">I forgot my password</a>
+                        </p>
+                        <p class="mb-0">
+                            Already have an account?  <a href="{% url 'accounts:login' %}"class="text-center">Log In here</a>
+                        </p>
+                    </div>
+                    <!-- /.login-card-body -->
+                </div>
+            </div>
+
+            <div class="card card-body text-center">
+
+                <h5 class="card-title ">Use Strong Passwords</h5>
+                <i class="fa fa-shield-virus fa-5x"></i>
+                <p class="small text-info text-justify">
+                    Always use unique passwords that can't easily be guessed. Avoid common words or people's names and remember to change your passwords regularly. Do not use the same password across multiple websites. And if you’re using a public computer or a computer used by multiple people, make sure that you fully log out each time and don’t let the browser save your usernames or passwords.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endblock %}
+
+    {% block script %}
+<script defer type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+    {% endblock %}
+        
+
+

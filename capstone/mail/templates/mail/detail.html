@@ -1,0 +1,20 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block title %}
+
+Contact
+                   
+{% endblock %}
+
+{% block body %}
+
+<div class="card card-body">
+    <h1>{{ object.created }}</h1>
+<p>{{ object.content }}</p>
+<p>Reporter: {{ object.reporter }}</p>
+<p>Published: {{ object.pub_date|date }}</p>
+<p>Date: {{ now|date }}</p>
+    </div>
+
+{% endblock %}

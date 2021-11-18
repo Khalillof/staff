@@ -1,0 +1,64 @@
+
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+          <!-- /.card-header -->
+          <div class="card-body ">
+            <div class="mailbox-read-info">
+              <h5> {{object.title}}</h5>
+              <h6>Author : {{object.author.full_name}}
+                <span class="mailbox-read-time float-right">Created : {{ object.created|date:"D d M y  H:i" }}</span></h6>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <div class="mailbox-controls with-border text-center">
+              <div class="btn-group">
+                <a href="{% url 'news:post-delete' object.id %}" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                  <i class="far fa-trash-alt"></i></a>
+              </div>
+              <!-- /.btn-group -->
+              <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                <i class="fas fa-print"></i></button>
+            </div>
+            <!-- /.mailbox-controls -->
+            <div data-read="{{object.content}}" class="mailbox-read-message">
+
+              <img  src="{% static object.imgUrl|default:object.image %}" width="200"  height="20" class=" img-rounded img-fluid ">
+
+               
+
+           
+              <p>
+
+                  
+                   {% autoescape off %}
+                  {{ object.discription }}
+              
+                    {% endautoescape %}
+
+              </p>
+              <hr>
+              <p>
+
+                {% autoescape off %}
+                {{ object.content }}
+            {% endautoescape %}
+
+
+           </p>
+
+            </div>
+            <!-- /.mailbox-read-message -->
+          </div>
+
+          <!-- /.card-footer -->
+          <div class="card-footer">
+            <a href="{% url 'news:index' page=1 %}" class="btn btn-default"><i class="far fa-list-alt"></i> Back to list</a>
+            <a href="{% url 'news:post-delete' object.id %}" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
+            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+          </div>
+
+
+{% endblock %}

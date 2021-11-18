@@ -1,0 +1,52 @@
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block title %}
+
+Contacts
+                   
+{% endblock %}
+
+{% block body %}
+
+<div class="card card-body">
+    {%if object_list %}
+    <ul>
+     
+        {% for app in object_list %}
+            <li>{{ app.ceated|date }} - {{ app.applicant.username }}</li>
+            {% empty %}
+            <li>No Application yet.</li>
+        {% endfor %}
+        </ul>
+
+        <br><br>
+
+        <nav id='paginator' aria-label='navigation'><ul class='pagination'><li  class='page-item '><a id='prev' preval="{{ page_obj.previous_page}}" class='page-link controls'   href="{% url 'agency:application-list' page_obj.previous_page %}">Previous</a></li> <li class='page-item disabled' ><a class='page-link '   href='#' > total: <span class='badge badge-info'> {{ page_obj.num_pages }} </span> | current: <span class='badge badge-info'> {{ page_obj.current_page }} </span> </a></li><li  class='page-item'><a id='next' nextval="{{ page_obj.next_page}}" class="page-link controls" href="{% url 'agency:application-list' page_obj.next_page %}" >Next</a></li> </ul></nav>             
+      {% else %}
+      <h4 class="text-center">No Application yet.</h4>
+        {% endif%}
+    </div>
+
+{% endblock %}
+
+{% include "shared/_pagination.html" with pagination=pagination %}
+
+<!--
+{% block script %}
+<script>
+    var next = document.getElementById("next"), prev = document.getElementById("prev"), nextval = next.getAttribute("nextval"), preval = prev.getAttribute("preval");
+    
+if(nextval  === '0' ||nextval === 0 || nextval === "" || nextval === undefined ){
+   next.parentElement.classList.add("disabled");
+   next.parentElement.disabled = true;
+   
+}
+if(preval  === '0' ||preval === 0 || preval === "" || preval === undefined){
+    prev.parentElement.classList.add("disabled");
+    prev.parentElement.disabled = true; 
+    
+}
+</script>
+{% endblock%}
+-->

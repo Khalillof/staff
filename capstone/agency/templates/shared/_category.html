@@ -1,0 +1,8 @@
+<a class="nav-link d-inline" data-toggle="collapse" data-target="#cat-section" aria-expanded="false" href="#" role="button"><i class="fas fa-th-large"></i> Categories <i class="fas fa-tags"></i> </a>
+<div id="cat-section" class="collapse d-inline">
+{% for item in categories %}
+  <a href="{% url  cat_url|default:'agency:category-list'  category_id=item.id  page=1 %}" class="btn btn-outline-primary btn-sm"><i class="fa fa-tag text-maroon"></i> {{ item.name }}</a>
+
+  {% endfor %}
+</div>
+

@@ -1,0 +1,28 @@
+
+import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+
+
+
+  
+
+async function images(){
+    return gulp.src('dist/capstone/agency/static/images/**/*')		
+    .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({
+            plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+            ]
+        })
+    ])).pipe(gulp.dest('dist/capstone/agency/static/images/'))
+    }
+// Define complex tasks
+//const build = series(clean, copies, parallel(allcss, alljs, htmls, extract_css));
+const build = gulp.series(images);
+
+exports.default = build;
+module.exports.default = build

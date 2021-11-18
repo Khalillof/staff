@@ -1,0 +1,517 @@
+
+[
+    {
+        "model": "accounts.User",
+        "pk": 1,
+        "fields": {
+            "password": "123456789",
+            "is_superuser": "True",
+            "username": "Khalillof",
+            "first_name": "Khalillof",
+            "last_name": "Tuban",
+            "email": "tuban@tuban.com",
+            "mobile": "0123456789",
+            "email_confirmed": "True" 
+        }
+    }, {
+        "model": "accounts.User",
+        "pk": 2,
+        "fields": {
+            "password": "123456789",
+            "username": "John",
+            "first_name": "John",
+            "last_name": "Derik",
+            "email": "john@john.com",
+            "mobile": "0123456734",
+            "email_confirmed": "True"
+        }
+    }, {
+        "model": "agency.JobCategory",
+        "pk": 1,
+        "fields": {
+            "name": "Bus Driver",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "agency.JobCategory",
+        "pk": 2,
+        "fields": {
+            "name": "Truck Driver",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }, {
+        "model": "agency.JobCategory",
+        "pk": 3,
+        "fields": {
+            "name": "Security Officer ",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "agency.JobCategory",
+        "pk": 4,
+        "fields": {
+            "name": "Web Developer",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }, {
+        "model": "agency.JobCategory",
+        "pk": 5,
+        "fields": {
+            "name": "IT",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "agency.JobCategory",
+        "pk": 6,
+        "fields": {
+            "name": "Nurse",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }, {
+        "model": "agency.JobCategory",
+        "pk": 7,
+        "fields": {
+            "name": "HR",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "agency.JobCategory",
+        "pk": 8,
+        "fields": {
+            "name": "Civil Engineer",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "agency.Address",
+        "pk": 1,
+        "fields": {
+            "first_line": "10 Downing St",
+            "street_name": "Downing St",
+            "city": "London",
+            "country": "United Kingdon",
+            "zip_code": "CW10 E67",
+            "created": "2020-10-15 00:00:00",
+            "address_type": 2
+        }
+    }, 
+    {
+        "model": "agency.Address",
+        "pk": 2,
+        "fields": {
+            "first_line": "10 Home St",
+            "street_name": "Home St",
+            "city": "New york",
+            "country": "United State",
+            "zip_code": "KW10 E67",
+            "created": "2020-10-15 00:00:00",
+            "address_type": 2
+        }
+    },{
+        "model": "agency.Office",
+        "pk": 1,
+        "fields": {
+            "name": "Prof Drivers ltd ",
+            "manager": 1,
+            "discription": "nation wide recruitment agency providing highly skilled professionals",
+            "telephone": "0123456789",
+            "email": "company@company.com",
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl": "agency/images/avatar.png"
+        }
+    }, {
+        "model": "agency.Office",
+        "pk": 2,
+        "fields": {
+            "name": "Skycrapers ltd ",
+            "manager": 2,
+            "discription": "nation wide engineering agency providing highly skilled professionals",
+            "telephone": "0123456789",
+            "email": "company@company.com",
+            "location": 2,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl": "agency/images/avatar.png"
+
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 1,
+        "fields": {
+            "title": "School Bus Driver",
+            "contract_type": 2,
+            "salary": 2000,
+            "per_hour": 11,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 2,
+        "fields": {
+            "title": "Django Developer",
+            "contract_type": 1,
+            "salary": 3000,
+            "per_hour": 17,
+            "location": 2,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 3,
+        "fields": {
+            "title": "System Engineer",
+            "contract_type": 2,
+            "salary": 5000,
+            "per_hour": 20,
+            "location": 2,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 4,
+        "fields": {
+            "title": "Care Home Nurse",
+            "contract_type": 1,
+            "salary": 3000,
+            "per_hour": 15,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 5,
+        "fields": {
+            "title": "Truck Driver",
+            "contract_type": 2,
+            "salary": 2000,
+            "per_hour": 11,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 6,
+        "fields": {
+            "title": "General Nurse",
+            "contract_type": 2,
+            "salary": 4000,
+            "per_hour": 11,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 7,
+        "fields": {
+            "title": "HR Manager",
+            "contract_type": 1,
+            "salary": 5000,
+            "per_hour": 19,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 8,
+        "fields": {
+            "title": "Data Analist",
+            "contract_type": 2,
+            "salary": 5000,
+            "per_hour": 19,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 2
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 9,
+        "fields": {
+            "title": "Security Guard",
+            "contract_type": 2,
+            "salary": 1000,
+            "per_hour": 10,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 10,
+        "fields": {
+            "title": "civil Engineer",
+            "contract_type": 2,
+            "salary": 4000,
+            "per_hour": 11,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 2
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 11,
+        "fields": {
+            "title": "Bus Coach Driver",
+            "contract_type": 2,
+            "salary": 2000,
+            "per_hour": 10,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Job",
+        "pk": 12,
+        "fields": {
+            "title": "Adminstrator",
+            "contract_type": 2,
+            "salary": 2000,
+            "per_hour": 11,
+            "location": 1,
+            "created": "2020-10-15 00:00:00",
+            "office": 1
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 1,
+        "fields": {
+            "job": 1,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/310_170/bus_3.jpg"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 2,
+        "fields": {
+            "job": 2,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 4,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/logo100Tran.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 3,
+        "fields": {
+            "job": 3,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 5,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/logo100Tran.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 4,
+        "fields": {
+            "job": 4,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 3,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/avatar.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 5,
+        "fields": {
+            "job": 5,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 7,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/310_170/bus_3.jpg"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 6,
+        "fields": {
+            "job": 6,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/logo100Tran.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 7,
+        "fields": {
+            "job": 7,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/avatar.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 8,
+        "fields": {
+            "job": 8,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/avatar.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 9,
+        "fields": {
+            "job": 9,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/avatar.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 10,
+        "fields": {
+            "job": 10,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/avatar.png"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 11,
+        "fields": {
+            "job": 11,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 1,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/310_170/couch_1.jpg"
+        }
+    },
+    {
+        "model": "agency.Advert",
+        "pk": 12,
+        "fields": {
+            "job": 12,
+            "Core_requirements": "this is dummy core requirment to this position",
+            "open_date": "2020-10-15 00:00:00",
+            "close_date":"2020-12-15 00:00:00",
+            "positions": 1,
+            "category": 8,
+            "created": "2020-10-15 00:00:00",
+            "imgUrl":"agency/images/logo100Tran.png"
+        }
+    },
+     {
+        "model": "news.PostCategory",
+        "pk": 1,
+        "fields": {
+            "name": "finances",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "news.PostCategory",
+        "pk": 2,
+        "fields": {
+            "name": "new jobs",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }, {
+        "model": "news.PostCategory",
+        "pk": 3,
+        "fields": {
+            "name": "General news ",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    },
+    {
+        "model": "news.PostCategory",
+        "pk": 4,
+        "fields": {
+            "name": "Staff news",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }, {
+        "model": "news.PostCategory",
+        "pk": 5,
+        "fields": {
+            "name": "holidays",
+            "created": "2020-10-15 00:00:00",
+            "discription": "this is dummy category description for"
+        }
+    }
+]

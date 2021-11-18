@@ -1,0 +1,53 @@
+﻿{% load static %}
+{% if user.is_authenticated %}
+
+    <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <img  src="{% static request.user.imgUrl %}" width="35" height="35" alt="hii" class="img-circle elevation-2" alt="User Image">
+            <span class="d-none d-md-inline">{{user.first_name}} {{ user.last_name}}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <!-- User image -->
+            <li class="user-header bg-primary">
+                <img  src="{% static request.user.imgUrl %}" alt="hii" class="img-circle elevation-2" alt="User Image">
+
+                <p>
+                    {{user.username}}
+
+                    <small>{{user.date_joined}}</small>
+                </p>
+            </li>
+            <!-- Menu Body -->
+            <li class="user-body">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <a href="#">Followers</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a href="#">Sales</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a href="#">Friends</a>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+                <div class="btn-group btn-block">
+                    <a href="{% url 'accounts:profile' %}" class="btn  btn-info btn-flat">Profile</a>
+                    <a class="btn btn-light btn-flat"  href="{% url 'accounts:profile' %}" title="Manage"> Manage</a>
+                        <a href="{% url 'accounts:logout' %}" id="logout" class="btn btn-info btn-flat float-right"> Sign out</a>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    {% else %}
+<li class="nav-item">
+    <a class="nav-link"   href="{% url 'accounts:login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'accounts:user-add' %}">Register</a>
+</li>
+{% endif %}

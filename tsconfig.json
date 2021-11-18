@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./capstone/agency/static",
+        "outDir": "./tsc-output",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2016",
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "lib": [
+            "ES2016",
+            "DOM"
+        ],
+        "inlineSourceMap": true
+    },
+    "include": ["capstone/agency/static/"],
+    "exclude": ["node_modules", ".vscode"]
+}

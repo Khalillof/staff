@@ -1,0 +1,61 @@
+
+{% extends "shared/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+          <!-- /.card-header -->
+          <div class="card-body ">
+            <div class="mailbox-read-info">
+              <h5> Job Title {{object.advert.job.title}}</h5>
+              <h6>Applicant Name : {{object.applicant.full_name}}
+                <span class="mailbox-read-time float-right">{{ object.created|date:"D d M y  H:i" }}</span></h6>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <div class="mailbox-controls with-border text-center">
+              <div class="btn-group">
+                <a href="{% url 'agency:application-delete' object.id %}" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                  <i class="far fa-trash-alt"></i></a>
+              </div>
+              <!-- /.btn-group -->
+              <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                <i class="fas fa-print"></i></button>
+            </div>
+            <!-- /.mailbox-controls -->
+            <div data-read="{{object.cover_letter}}" class="mailbox-read-message">
+
+              <p>
+
+                {% autoescape off %}
+                {{ object.cover_letter }}
+                {% endautoescape %}
+
+              </p>
+
+            </div>
+            <!-- /.mailbox-read-message -->
+          </div>
+
+          <div class="card-footer bg-white">
+
+            <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+                <li>
+                  <span class="mailbox-attachment-icon"><i class="far fa-file-pdf"></i></span>
+  
+                  <div class="mailbox-attachment-info">
+                    <a href="{% static object.fileUrl %}" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> applicant_cv.pdf</a>
+                        <span class="mailbox-attachment-size clearfix mt-1">
+                          <span>1,245 KB</span>
+                          <a href="{% static object.fileUrl %}" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                        </span>
+                  </div>
+                </li>
+                </ul>
+
+            <a href="{% url 'agency:application-delete' object.id %}" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
+            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+          </div>
+
+
+{% endblock %}

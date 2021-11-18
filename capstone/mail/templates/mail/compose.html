@@ -1,0 +1,82 @@
+{% extends "mail/mailbox.html" %}
+{% load static %}
+
+{% block mailbox %}
+<div class="card-header">
+    <h3 class="card-title">Compose New Message</h3>
+</div>
+<form class="needs-validation " method="post"  id="compose" role="form" enctype="multipart/form-data" novalidate
+    action="">
+    <!-- /.card-header -->
+    <div class="card-body">
+
+        <!-- render visable field first-->
+        {% for field in form.visible_fields %}
+        
+        {% ifequal field.html_name "attachment" %}
+        <div class="form-group">
+            <div class="btn btn-default btn-file">
+                <i class="fas fa-paperclip"></i> Attachment
+                {{ field }} 
+            </div>
+            <p class="help-block">Max. 10MB</p>
+        </div>
+         {% else %}
+        <div class="form-group">
+                {{ field }}           
+        </div>
+        {% endifequal %}
+      
+        {% endfor %} 
+        
+        <!-- render hidden field last-->
+        {% for field in form.hidden_fields %}
+        {{ field }}
+
+        {% endfor %}
+
+
+        {% csrf_token %}
+
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <div class="float-right">
+            <button type="button" id="draft" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Draft</button>
+            <button type="button" id="send" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
+        </div>
+        <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
+    </div>
+
+</form>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script>
+    form =  document.getElementById("compose");
+    document.getElementById("draft").onclick = function(){
+         
+      if (!form.checkValidity()) {
+         return false
+       }  
+      form.action = "/mail/add/draft"; 
+    document.getElementById("id_draft").value = "True";
+   //console.log(dd)
+    form.submit()
+
+        console.log("draft submit fired")
+    }
+
+    document.getElementById("send").onclick = function(){   
+      if (!form.checkValidity()) {
+         return false
+       }  
+      //form.action = "/mail/add/draft"; 
+    document.getElementById("id_draft").value = "False";
+   //console.log(dd)
+    form.submit()
+    console.log("submit fired")
+    }
+</script>
+
+{% endblock scripts %}
