@@ -10,7 +10,7 @@ class User(AbstractUser):
     can_send_email = models.BooleanField(default=False)
     mobile = models.CharField(max_length=20, blank=True, null=True)
     image = models.FileField(blank=True, null=True,verbose_name="Photo optional",upload_to=images_upload_directory)
-    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="agency/images/avatar.png")
+    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="images/avatar.png")
 
     def full_name(self):
         return  f"{self.first_name}-{self.last_name}"

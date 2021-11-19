@@ -46,8 +46,8 @@ function clean() {
 // Bring third party dependencies from node_modules into vendor directory
 function copies() {  
     // capstone
-    let capstone = src(['capstone/**/*','Dockerfile','entrypoint.sh']).pipe(dest('dist/capstone'));
-    
+    let capstone = src(['capstone/**/*',]).pipe(dest('dist/capstone'));
+    let capstoneX = src(['Dockerfile','entrypoint.sh']).pipe(dest('dist'));
     let css = src(vendersCss).pipe(dest(statics('css')));
 
     let Js = src([
@@ -72,7 +72,7 @@ function copies() {
         'node_modules/admin-lte/dist/img*/**/*',
     ]).pipe(dest(statics()));
 
-    return merge(capstone, css, Js,summernote, assets);
+    return merge(capstone, capstoneX, css, Js,summernote, assets);
 }
 
 // css

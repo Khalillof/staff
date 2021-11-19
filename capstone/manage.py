@@ -6,7 +6,7 @@ def main():
     load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
     #load_dotenv()
     #print(load_dotenv())
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', os.getenv('DJANGO_SETTINGS_MODULE', 'capstone.settings.development'))
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', os.getenv('DJANGO_SETTINGS_MODULE', 'capstone.settings.dev'))
 
     try:
         from django.core.management import execute_from_command_line

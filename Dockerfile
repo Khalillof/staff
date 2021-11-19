@@ -1,17 +1,16 @@
-FROM python:alpine as builder
-
-ENV VIRTUAL_ENV /env
-ENV PATH /env/bin:${PATH}
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+FROM python:3.9.6-alpine as builder
 
 # set work directory
 WORKDIR /usr/src/app
 
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev 
+
 RUN pip install --upgrade pip
 
 # install dependencies
@@ -21,14 +20,11 @@ RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requir
 #####################################################################################################
 # FINAL #
 #########
-FROM python:alpine
+FROM python:3.9.6-alpine
 
-ENV AppDir=/home/capstone/app StaticDir=$AppDir/static mediaDir=$AppDir/media 
+ENV AppDir=/app StaticDir=$AppDir/static mediaDir=$AppDir/media  
 
 RUN mkdir -p $AppDir $StaticDir $mediaDir
-
-#RUN addgroup -S app && adduser -S app -G app \
-RUN pip install --upgrade pip  
 
 WORKDIR ${AppDir}
 # install dependencies
@@ -42,13 +38,10 @@ RUN chmod +x $AppDir/entrypoint.sh
  
 COPY /capstone/ $AppDir
 
-#COPY --chown=userGroup:userGroup . . ## this feature is only supported in lunix containers 
-## otherwie use #RUN chown -R node:node  foldertoCopy dist
-#RUN chown -R app:app ${AppDir}
+# Creates a non-root user with an explicit UID and adds permission to access the /app folder
+# For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser ${AppDir}
+USER appuser
 
 EXPOSE 8000
-ENTRYPOINT ["/bin/sh","/home/capstone/app/entrypoint.sh"]
-
-
-
-
+ENTRYPOINT ["/bin/sh", "/app/entrypoint.sh"]

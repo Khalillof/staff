@@ -39,11 +39,11 @@ class ApplicationForm(forms.ModelForm):
     class Media:
 
         js = (
-             'agency/plugins/jquery/jquery.min.js', # jquery
-            'agency/plugins/summernote/summernote-bs4.min.js',   
-            'agency/js/html.js', 
+             'js/jquery.min.js', # jquery
+            'summernote/summernote-bs4.min.js',   
+            'js/html.js', 
         )
         css = {
-           'all': ('agency/plugins/summernote/summernote-bs4.min.css',)
+           'all': ('summernote/summernote-bs4.min.css',)
         }
     

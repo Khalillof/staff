@@ -43,7 +43,7 @@ class Office(models.Model):
     location = models.ForeignKey(Address, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now=True, blank=True)
     image = models.FileField(blank=True, null=True,verbose_name="Logo optional", upload_to=images_upload_directory)
-    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="agency/images/avatar.png")
+    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="images/avatar.png")
 
     def get_absolute_url(self):
         return reverse('office-detail', kwargs={'pk': self.pk})
@@ -89,7 +89,7 @@ class Advert(models.Model):
     positions = models.IntegerField(default=0)  
     closed = models.BooleanField(default=False)
     image = models.FileField(blank=True,verbose_name="Logo optional", null=True,upload_to=images_upload_directory)
-    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="agency/images/avatar.png")
+    imgUrl = models.CharField(max_length=100, blank=True, null=True, default="images/avatar.png")
     category = models.ForeignKey(JobCategory, on_delete=models.PROTECT,blank=True, null=True )
     #applications = models.ManyToManyField(Application,blank=True, related_name="job_applications")
 
@@ -126,5 +126,5 @@ class Application(models.Model):
         ordering = ['created']
 
     def __str__(self):
-      return f"First Name : {self.applicant.first_name}; # Last Name : {self.applicant.last_name}"
+      return f"First Name : {self.applicant.first_name}; Last Name : {self.applicant.last_name}"
 

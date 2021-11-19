@@ -12,6 +12,6 @@ from dotenv import load_dotenv
 
 from django.core.asgi import get_asgi_application
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', os.environ.get('DJANGO_SETTINGS_MODULE', 'capstone.settings.development'))
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', os.environ.get('DJANGO_SETTINGS_MODULE', 'capstone.settings.dev'))
 
 application = get_asgi_application()
